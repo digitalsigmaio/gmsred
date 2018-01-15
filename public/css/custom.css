@@ -35,3 +35,13 @@ ul.sidebar-menu li ul.sub li a:hover {
 .dropdown-menu.extended.logout > li:last-child > a, .dropdown-menu.extended.logout > li:last-child > a:hover {
     background-color: #8C0303!important;
 }
+
+.btn-primary {
+    background-color: #8C0303!important;
+}
+
+.btn-primary:hover {
+    color: #8C0303!important;
+    border-color: #8C0303!important;
+    background: transparent;
+}
