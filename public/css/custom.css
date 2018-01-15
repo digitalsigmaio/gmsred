@@ -37,11 +37,12 @@ ul.sidebar-menu li ul.sub li a:hover {
 }
 
 .btn-primary {
+    border-color: #8C0303!important;
     background-color: #8C0303!important;
 }
 
 .btn-primary:hover {
     color: #8C0303!important;
     border-color: #8C0303!important;
-    background: transparent;
+    background: transparent!important;
 }
