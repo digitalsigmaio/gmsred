@@ -46,3 +46,8 @@ ul.sidebar-menu li ul.sub li a:hover {
     border-color: #8C0303!important;
     background: transparent!important;
 }
+
+.panel.panel-primary .panel-heading, .panel.panel-primary .panel-footer {
+    color: #fff;
+    background-color: #8C0303!important;
+}

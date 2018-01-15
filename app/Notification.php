@@ -33,7 +33,7 @@ class Notification extends Device
      *
      * @var string
      */
-    const RED_APP_TOKEN = "";
+    const RED_APP_TOKEN = "AIzaSyBtC73DptdfWi6medMAVdodCe0nSrAneKo";
     
     /*
      * Default parameters for headers
@@ -43,7 +43,7 @@ class Notification extends Device
     const HEADERS = [
     	'Accept: application/json',
     	'Content-Type: application/json',
-        'Authorization: key=' . self::SILVER_APP_TOKEN
+        'Authorization: key=' . self::RED_APP_TOKEN
     ];
 
     /*
