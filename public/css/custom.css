@@ -1,0 +1,13 @@
+.dark-bg {
+    color: #fff;
+    background-color: #590202!important;
+}
+
+#sidebar {
+    background-color: #8C0303!important;
+}
+
+
+ul.sidebar-menu li.active a, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
+    background-color: #590202!important;
+}
