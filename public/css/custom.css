@@ -19,3 +19,7 @@ ul.sidebar-menu ul.sub li {
     color: #8C0303!important;
     background-color: #fff!important;
 }
+
+ul.sidebar-menu li ul.sub li a {
+    color: #8C0303!important;
+}
