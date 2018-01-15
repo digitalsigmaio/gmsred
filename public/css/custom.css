@@ -27,3 +27,11 @@ ul.sidebar-menu li ul.sub li a {
 ul.sidebar-menu li ul.sub li a:hover {
     color: #fff!important;
 }
+
+.profile-ava img {
+    border: 2px solid #fff!important;
+}
+
+.dropdown-menu.extended.logout > li:last-child > a, .dropdown-menu.extended.logout > li:last-child > a:hover {
+    background-color: #8C0303!important;
+}
