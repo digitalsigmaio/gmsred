@@ -1,3 +1,6 @@
+.body {
+    background-color: #fff!important;
+}
 .dark-bg {
     color: #fff;
     background-color: #590202!important;
@@ -10,4 +13,9 @@
 
 ul.sidebar-menu li.active a, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
     background-color: #590202!important;
+}
+
+ul.sidebar-menu ul.sub li {
+    color: #8C0303!important;
+    background-color: #fff!important;
 }
