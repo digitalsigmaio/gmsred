@@ -21,5 +21,9 @@ ul.sidebar-menu ul.sub li {
 }
 
 ul.sidebar-menu li ul.sub li a {
-    color: #8C0303!important;
+     color: #8C0303!important;
+ }
+
+ul.sidebar-menu li ul.sub li a:hover {
+    color: #fff!important;
 }
