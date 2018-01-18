@@ -37,16 +37,23 @@ class GMS extends Model
      * */
     public function uploadImage(Request $request)
     {
-        if($request->hasFile('image')){
+        if($request->file('image')->isValid()){
             $image = $request->file('image');
-            $classname = strtolower(class_basename($this));
-            $filename = $classname . '_' . $this->id . '.' . $image->getClientOriginalExtension();
-            $path = 'img/' . $classname;
-            $image->move($path, $filename);
-            $uri = '/gmsgroup/' . $path . '/' . $filename;
 
-            $this->image = $uri;
-            $this->save();
+            if($image->getClientMimeType() == "image") {
+                $classname = strtolower(class_basename($this));
+                $filename = $classname . '_' . $this->id . '.' . $image->getClientOriginalExtension();
+                $path = 'img/' . $classname;
+                $image->move($path, $filename);
+                $uri = '/gmsgroup/' . $path . '/' . $filename;
+
+                $this->image = $uri;
+                $this->save();
+            } else {
+                return redirect()->back()->withErrors(['Invalid image type']);
+            }
         }
+
+        return redirect()->back()->withErrors(['File is not valid']);
     }
 }
