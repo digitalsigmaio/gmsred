@@ -192,7 +192,8 @@ class UserController extends Controller
 
     public function generateToken(Request $request)
     {
-        $user = User::find($request->user_id);
+        $user = User::find($request->user);
+        
         $url = "http://gms-sms.com:89/gmsred/oauth/token";
         $headers = [
             'Accept: application/json',
