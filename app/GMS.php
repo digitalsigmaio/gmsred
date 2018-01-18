@@ -16,16 +16,27 @@ class GMS extends Model
      * */
     public function uploadLogo(Request $request)
     {
-        if($request->hasFile('logo')){
-        $logo = $request->file('logo');
-        $classname = strtolower(class_basename($this));
-        $filename = $classname . '_' . $this->id . '.' . $logo->getClientOriginalExtension();
-        $path = 'img/' . $classname;
-        $logo->move($path, $filename);
-        $uri = '/gmsgroup/' . $path . '/' . $filename;
+        if($request->file('logo')->isValid()){
+            $logo = $request->file('logo');
 
-        $this->logo = $uri;
-        $this->save();
+            if ($logo->getClientMimeType() == "image") {
+                if ($logo->getClientSize() <= 1024) {
+                    $classname = strtolower(class_basename($this));
+                    $filename = $classname . '_' . $this->id . '.' . $logo->getClientOriginalExtension();
+                    $path = 'img/' . $classname;
+                    $logo->move($path, $filename);
+                    $uri = '/gmsgroup/' . $path . '/' . $filename;
+
+                    $this->logo = $uri;
+                    $this->save();
+                } else {
+                    return redirect()->back()->withErrors(['Logo is too large']);
+                }
+            } else {
+                return redirect()->back()->withErrors(['Invalid logo type']);
+            }
+        } else {
+            return redirect()->back()->withErrors(['File is not valid']);
         }
     }
 
@@ -41,14 +52,18 @@ class GMS extends Model
             $image = $request->file('image');
 
             if($image->getClientMimeType() == "image") {
-                $classname = strtolower(class_basename($this));
-                $filename = $classname . '_' . $this->id . '.' . $image->getClientOriginalExtension();
-                $path = 'img/' . $classname;
-                $image->move($path, $filename);
-                $uri = '/gmsgroup/' . $path . '/' . $filename;
+                if ($image->getClientSize() <= 1024) {
+                    $classname = strtolower(class_basename($this));
+                    $filename = $classname . '_' . $this->id . '.' . $image->getClientOriginalExtension();
+                    $path = 'img/' . $classname;
+                    $image->move($path, $filename);
+                    $uri = '/gmsgroup/' . $path . '/' . $filename;
 
-                $this->image = $uri;
-                $this->save();
+                    $this->image = $uri;
+                    $this->save();
+                } else {
+                    return redirect()->back()->withErrors(['Image is too large']);
+                }
             } else {
                 return redirect()->back()->withErrors(['Invalid image type']);
             }
