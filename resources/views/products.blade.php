@@ -42,8 +42,8 @@
                                 <td><a href="{{ route('editProduct', compact('product')) }}"><span class="btn btn-info">Edit</span></a></td>
                                 <td>
                                     <form action="{{ route('deleteProduct', compact('product')) }}" method="post">
+                                        {{ method_field('DELETE') }}
                                         {{ csrf_field() }}
-                                        <input type="hidden" name="_method" value="DELETE">
                                         <button type="submit" class="btn btn-danger deleteItem">Delete</button>
                                     </form>
                                 </td>
