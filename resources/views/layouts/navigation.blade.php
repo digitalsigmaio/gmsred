@@ -124,9 +124,6 @@
                 <ul class="sub">
                     <li><a class="" href="{{ route('users') }}">List</a></li>
                     <li><a class="" href="{{ route('newUser') }}">New</a></li>
-                    @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
-                        <li><a class="" href="{{ route('generateToken') }}">Generate Token</a></li>
-                    @endif
                 </ul>
             </li>
             @endif
