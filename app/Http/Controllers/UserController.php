@@ -201,8 +201,8 @@ class UserController extends Controller
 
         $form_params = [
             'grant_type' => 'password',
-            'client_id' => 'client-id',
-            'client_secret' => 'client-secret',
+            'client_id' => '2',
+            'client_secret' => 'Ma8yRvb9PPKwoZZzyaMIdCcNzsP35WSpabb0zRwj',
             'username' => $user->email,
             'password' => $user->password,
         ];
