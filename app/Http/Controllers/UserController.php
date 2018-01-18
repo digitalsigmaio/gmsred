@@ -190,5 +190,39 @@ class UserController extends Controller
         return redirect()->back()->withErrors(['message' => 'Username or password is not correct']);
     }
 
+    public function generateToken(User $user)
+    {
+        $headers = [
+            'Accept: application/json',
+            'Content-Type: application/json',
+        ];
+
+        $form_params = [
+            'grant_type' => 'password',
+            'client_id' => 'client-id',
+            'client_secret' => 'client-secret',
+            'username' => $user->email,
+            'password' => $user->password,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, self::URL);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($form_params));
+
+        $response = curl_exec($ch);
+
+        curl_close($ch);
+
+        if ($response){
+            $result = json_decode($response);
+            $access_token = $result->access_token;
+            $token = "Bearer " . $access_token;
+            return $token;
+        }
+    }
 
 }

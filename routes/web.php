@@ -130,6 +130,8 @@ Route::group(['prefix' => 'users'], function (){
     Route::get('/{user}/edit',     'UserController@edit')->name('editUser');
     Route::put('/{user}',          'UserController@update')->name('updateUser');
     Route::delete('/{user}',       'UserController@destroy')->name('deleteUser');
+    Route::view('/generateToken',   'tokenGenerator')->name('generateToken');
+    Route::post('/generateToken',  'UserController@generateToken');
 });
 
 Route::group(['prefix' => 'notification'], function (){

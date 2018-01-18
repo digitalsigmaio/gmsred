@@ -19,4 +19,21 @@ $(document).ready(function () {
             opacity: 0.9
         });
     });
+
+    $('.token-generator').on('click', function () {
+        var userId = $('input[name="user_id"]').val();
+        $.ajax({
+            type: "POST",
+            headers: {
+                'X-CSRF-TOKEN': $('input[name="_token"]').val()
+            },
+            data: {
+                user: userId
+            },
+            url : "generateToken",
+            success : function (data) {
+                $('.token-value').html(data);
+            }
+        });
+    });
 });
