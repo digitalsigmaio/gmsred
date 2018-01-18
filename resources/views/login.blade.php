@@ -59,7 +59,7 @@
                         <div class="form-group col-xs-12">
                             <label for="username"><span class="text-danger" style="margin-right:5px;">*</span>Username:</label>
                             <div class="input-group">
-                                <input class="form-control" id="username" type="text" name="username" placeholder="Username" required/>
+                                <input class="form-control" id="username" type="text" name="username" placeholder="Username" value="{{ old('username') }}" required/>
                                 <span class="input-group-btn">
                                     <label class="btn btn-primary"><span class="fa fa-user" aria-hidden="true"></span></label>
                                 </span>
