@@ -25,7 +25,7 @@ class GMS extends Model
                     $filename = $classname . '_' . $this->id . '.' . $logo->getClientOriginalExtension();
                     $path = 'img/' . $classname;
                     $logo->move($path, $filename);
-                    $uri = '/gmsgroup/' . $path . '/' . $filename;
+                    $uri = '/gmsred/' . $path . '/' . $filename;
 
                     $this->logo = $uri;
                     $this->save();
@@ -57,7 +57,7 @@ class GMS extends Model
                     $filename = $classname . '_' . $this->id . '.' . $image->getClientOriginalExtension();
                     $path = 'img/' . $classname;
                     $image->move($path, $filename);
-                    $uri = '/gmsgroup/' . $path . '/' . $filename;
+                    $uri = '/gmsred/' . $path . '/' . $filename;
 
                     $this->image = $uri;
                     $this->save();
