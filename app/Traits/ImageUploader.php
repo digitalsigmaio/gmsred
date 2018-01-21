@@ -31,7 +31,7 @@ trait ImageUploader
                     $filename = $classname . '_' . $this->id . '.' . $image->getClientOriginalExtension();
                     $path = 'img/' . $classname;
                     $image->move($path, $filename);
-                    $uri = '/gmsgroup/' . $path . '/' . $filename;
+                    $uri = '/gmsred/' . $path . '/' . $filename;
 
                     $this->image = $uri;
                     $this->save();
