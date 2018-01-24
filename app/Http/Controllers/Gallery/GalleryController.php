@@ -51,7 +51,6 @@ class GalleryController extends Controller
      */
     public function store(StoreGalleryRequest $request)
     {
-        $request->validate();
         $gallery = new Gallery;
 
         $gallery->ar_title = $request->ar_title;
