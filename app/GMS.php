@@ -9,7 +9,7 @@ class GMS extends Model
 {
     private $allowedMimeTypes = ['image/jpeg','image/gif','image/png','image/bmp','image/svg+xml'];
 
-    private $subdomain = '/gmsred/';
+
     /*
      * Upload logo and save it on server with unique name
      *
@@ -27,7 +27,7 @@ class GMS extends Model
                     $filename = $classname . '_' . $this->id . '.' . $logo->getClientOriginalExtension();
                     $path = 'img/' . $classname;
                     $logo->move($path, $filename);
-                    $uri = $this->subdomain . $path . '/' . $filename;
+                    $uri = '/gmsred/' . $path . '/' . $filename;
 
                     $this->logo = $uri;
                     $this->save();
@@ -59,7 +59,7 @@ class GMS extends Model
                     $filename = $classname . '_' . $this->id . '.' . $image->getClientOriginalExtension();
                     $path = 'img/' . $classname;
                     $image->move($path, $filename);
-                    $uri = $this->subdomain . $path . '/' . $filename;
+                    $uri = '/gmsred/' . $path . '/' . $filename;
 
                     $this->image = $uri;
                     $this->save();

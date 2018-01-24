@@ -14,7 +14,7 @@ trait ImageUploader
 {
 	private $allowedMimeTypes = ['image/jpeg','image/gif','image/png','image/bmp','image/svg+xml'];
 
-	private $subdomain = '/gmsred/';
+	
     /*
      * Upload image and save it on server with unique name
      *
@@ -33,7 +33,7 @@ trait ImageUploader
                     $filename = $classname . '_' . $this->id . '.' . $image->getClientOriginalExtension();
                     $path = 'img/' . $classname;
                     $image->move($path, $filename);
-                    $uri = $this->subdomain . $path . '/' . $filename;
+                    $uri = '/gmsred/' . $path . '/' . $filename;
 
                     $this->image = $uri;
                     $this->save();
