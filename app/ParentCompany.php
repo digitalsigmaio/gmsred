@@ -19,7 +19,7 @@ class ParentCompany extends GMS
      * @var array
      * */
     protected $attributes = [
-        'logo' => '/img/default.png',
+        'logo' => self::DEFAULT_IMAGE_PATH,
     ];
 
     /*

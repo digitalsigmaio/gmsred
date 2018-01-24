@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $attributes = [
-        'image' => '/gmsgroup/img/user/default.png',
+        'image' => '/gmsred/img/user/default.png',
         'role' => 3,
         'password' => "{bcrypt('admin')}"
     ];

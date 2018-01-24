@@ -12,7 +12,7 @@ class Project extends GMS
      * @val array
      * */
     protected $attributes = [
-        'logo' => '/img/default.png',
+        'logo' => self::DEFAULT_IMAGE_PATH,
         'parent_company_id' => 1
     ];
 

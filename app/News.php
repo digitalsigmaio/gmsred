@@ -22,7 +22,7 @@ class News extends GMS
      * @var array
      * */
     protected $attributes = [
-        'image' => '/img/default.png',
+        'image' => self::DEFAULT_IMAGE_PATH,
         'parent_company_id' => 1
     ];
 }

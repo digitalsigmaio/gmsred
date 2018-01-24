@@ -28,7 +28,7 @@ class StoreGalleryRequest extends FormRequest
             'en_title' => 'required',
             'ar_description' => 'required',
             'en_description' => 'required',
-            'image' => 'required',
+            'image' => 'mimes:jpeg,bmp,png|size:1000',
         ];
     }
 }
