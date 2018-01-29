@@ -18,8 +18,8 @@ class EmployeeTransformer extends TransformerAbstract
         return [
             'ar_name'      => $employee->arFullName(),
             'en_name'      => $employee->enFullName(),
-            'ar_position'  => $employee->position,
-            'en_position'  => $employee->position,
+            'ar_position'  => $employee->ar_position,
+            'en_position'  => $employee->en_position,
             'gender'    => $employee->gender,
             'phone'     => $employee->phone,
             'email'     => $employee->email,
