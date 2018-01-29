@@ -57,6 +57,7 @@ class EmployeeController extends Controller
         $employee->en_position = $request->en_position;
         $employee->gender = $request->gender;
         $employee->phone = (string) $request->phone;
+        $employee->email = $request->email;
         $employee->save();
         /*
          * Here stands logo upload function
@@ -121,6 +122,7 @@ class EmployeeController extends Controller
         $employee->en_position = $request->en_position;
         $employee->gender = $request->gender;
         $employee->phone = (string) $request->phone;
+        $employee->email = $request->email;
         $employee->save();
         /*
          * Here stands logo upload function
