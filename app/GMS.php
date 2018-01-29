@@ -11,7 +11,7 @@ class GMS extends Model
 
     const SUB_DOMAIN = '/gmsred/';
 
-    const DEFAULT_IMAGE_PATH = self::SUB_DOMAIN . '/img/default.png';
+    const DEFAULT_IMAGE_PATH = self::SUB_DOMAIN . 'img/default.png';
     /*
      * Upload logo and save it on server with unique name
      *
