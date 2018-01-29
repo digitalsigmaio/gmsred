@@ -121,7 +121,11 @@ class UserController extends Controller
 
         $user->save();
 
-        $user->uploadImage($request);
+        if ($request->hasFile('image')) {
+            $user->uploadImage($request);
+
+        }
+
 
         if($request->wantsJson()){
             return  fractal()
