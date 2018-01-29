@@ -7,7 +7,6 @@ use App\Http\Requests\StoreProductRequest;
 use App\Transformers\ProductTransformer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller

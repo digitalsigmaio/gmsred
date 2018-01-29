@@ -35,6 +35,16 @@ Route::group(['prefix' => 'children'], function (){
     Route::delete('/{child}',     'Child\ChildController@destroy')->name('deleteSubsidiary')->middleware('auth');
 });
 
+Route::group(['prefix' => 'employees'], function (){
+    Route::get('/',               'Employee\EmployeeController@index')->name('employees')->middleware('auth');
+    Route::get('/new',            'Employee\EmployeeController@create')->name('newEmployee')->middleware('auth');
+    Route::post('/',              'Employee\EmployeeController@store')->name('storeEmployee')->middleware('auth');
+    Route::get('/{employee}/edit',   'Employee\EmployeeController@edit')->name('editEmployee')->middleware('auth');
+    Route::put('/{employee}',        'Employee\EmployeeController@update')->name('updateEmployee')->middleware('auth');
+    Route::get('/{employee}',        'Employee\EmployeeController@show')->name('showEmployee')->middleware('auth');
+    Route::delete('/{employee}',     'Employee\EmployeeController@destroy')->name('deleteEmployee')->middleware('auth');
+});
+
 Route::group(['prefix' => 'products'], function (){
     Route::get('/',                  'Product\ProductController@index')->name('products')->middleware('auth');
     Route::get('/new',               'Product\ProductController@create')->name('newProduct')->middleware('auth');
