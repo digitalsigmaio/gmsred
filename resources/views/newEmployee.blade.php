@@ -6,7 +6,7 @@
     <!-- Header -->
     <div class="row">
         <div class="col-lg-12">
-            <h3 class="page-header"><i class="icon_contacts"></i> Empoyees</h3>
+            <h3 class="page-header"><i class="icon_contacts"></i> Employees</h3>
         </div>
     </div>
 

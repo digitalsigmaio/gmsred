@@ -27,6 +27,11 @@ Route::group(['prefix' => 'children'], function (){
     Route::get('/{child}', 'Child\ChildController@show');
 });
 
+Route::group(['prefix' => 'employees'], function (){
+    Route::get('/', 'Employee\EmployeeController@index');
+    Route::get('/{child}', 'Employee\EmployeeController@show');
+});
+
 Route::group(['prefix' => 'products'], function (){
     Route::get('/', 'Product\ProductController@index');
     Route::get('/{product}', 'Product\ProductController@show');
