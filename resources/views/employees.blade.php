@@ -41,12 +41,12 @@
                             <td>{{ $employee->en_position }}</td>
                             <td>{{ $employee->phone }}</td>
                             <td>{{ $employee->email }}</td>
-                            <td><a href="{{ route('editEmployee', compact('employee')) }}"><span class="btn btn-info">Edit</span></a></td>
+                            <td><a href="{{ route('editEmployee', compact('employee')) }}" {{ $employee->id == 15 ? 'disabled' : '' }}><span class="btn btn-info">Edit</span></a></td>
                             <td>
                                 <form action="{{ route('deleteEmployee', compact('employee')) }}" method="post">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="btn btn-danger deleteItem">Delete</button>
+                                    <button type="submit" class="btn btn-danger deleteItem" {{ $employee->id == 15 ? 'disabled' : '' }}>Delete</button>
                                 </form>
                             </td>
                         </tr>
