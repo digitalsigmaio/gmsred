@@ -72,8 +72,8 @@
                             <label class="control-label col-lg-2" for="gender">Gender</label>
                             <div class="col-lg-10">
                                 <select name="gender" id="gender" class="form-control">
-                                    <option value="female" selected>Female</option>
-                                    <option value="male">Male</option>
+                                    <option value="female" {{ $employee->gender == 'female' ? 'selected' : '' }}>Female</option>
+                                    <option value="male" {{ $employee->gender == 'male' ? 'selected' : '' }}>Male</option>
                                 </select>
                             </div>
                         </div>
