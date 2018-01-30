@@ -14,6 +14,7 @@ class ParentCompanyTransformer extends TransformerAbstract
 {
     protected $availableIncludes = [
         'children',
+        'employees',
         'clients',
         'products',
         'services',
@@ -45,6 +46,11 @@ class ParentCompanyTransformer extends TransformerAbstract
     public function includeChildren (ParentCompany $parentCompany)
     {
         return $this->collection($parentCompany->children, new ChildTransformer);
+    }
+
+    public function includeEmployees (ParentCompany $parentCompany)
+    {
+        return $this->collection($parentCompany->employees, new EmployeeTransformer);
     }
 
     public function includeClients (ParentCompany $parentCompany)

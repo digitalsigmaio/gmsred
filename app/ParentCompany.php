@@ -109,4 +109,15 @@ class ParentCompany extends GMS
     {
         return $this->hasMany(Gallery::class);
     }
+
+    /**
+     * Assign relation with Employee class
+     *
+     * @param void
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function employees()
+    {
+        return $this->hasMany(Employee::class);
+    }
 }

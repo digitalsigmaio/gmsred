@@ -23,7 +23,7 @@ class ParentCompanyController extends Controller
         if($request->wantsJson()){
             return  fractal()
                 ->item($parentCompany)
-                ->parseIncludes(['children', 'services', 'products', 'projects', 'clients', 'socials', 'galleries'])
+                ->parseIncludes(['children', 'employees', 'services', 'products', 'projects', 'clients', 'socials', 'galleries'])
                 ->transformWith(new ParentCompanyTransformer)
                 ->toArray();
         }
