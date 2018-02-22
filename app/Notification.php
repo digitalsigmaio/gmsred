@@ -140,8 +140,6 @@ class Notification extends Device
 
         $response = [];
         foreach ($tokens as $chunk) {
-
-            dd($chunk);
             $ticket = self::send($chunk, $message);
             if($ticket){
                 $response_array = [];
