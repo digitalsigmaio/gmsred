@@ -14,11 +14,8 @@ class Device extends Model
      * */
     protected static function tokens()
     {
-        $devices = Device::all();
-        $tokens = [];
-        foreach ($devices as $device) {
-            $tokens[] = $device->token;
-        }
+        $tokens = Device::all()->pluck('token')->chunk(500);
+
         return $tokens;
     }
 }

@@ -136,11 +136,11 @@ class Notification extends Device
     public function notification(array $message)
     {
         $tokens = self::tokens();
-        $tokens_chunk = array_chunk($tokens, 500);
+
 
         $response = [];
-        foreach ($tokens_chunk as $group) {
-            $ticket = self::send($group, $message);
+        foreach ($tokens as $chunk) {
+            $ticket = self::send($chunk, $message);
             if($ticket){
                 $response_array = [];
                 $response_array['success'] = $ticket->success;
