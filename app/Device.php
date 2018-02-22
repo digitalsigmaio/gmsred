@@ -16,6 +16,6 @@ class Device extends Model
     {
         $tokens = Device::all()->pluck('token')->chunk(500);
 
-        return $tokens;
+        return $tokens->toArray();
     }
 }
