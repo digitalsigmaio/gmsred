@@ -2,7 +2,6 @@
 
 namespace App\Exceptions;
 
-use Dotenv\Exception\ValidationException;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
