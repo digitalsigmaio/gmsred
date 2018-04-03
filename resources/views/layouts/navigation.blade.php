@@ -37,6 +37,17 @@
             </li>
             <li class="sub-menu">
                 <a href="javascript:;" class="">
+                    <i class="icon_flowchart_alt"></i>
+                    <span>Categories</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="sub">
+                    <li><a class="" href="{{ route('categories') }}">List</a></li>
+                    <li><a class="" href="{{ route('newCategory') }}">New</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;" class="">
                     <i class="icon_gift_alt"></i>
                     <span>Products</span>
                     <span class="menu-arrow arrow_carrot-right"></span>
