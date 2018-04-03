@@ -6,7 +6,7 @@
     <!-- Header -->
     <div class="row">
         <div class="col-lg-12">
-            <h3 class="page-header"><i class="icon_easel"></i> Projects</h3>
+            <h3 class="page-header"><i class="fa fa-gears"></i> Access Tokens</h3>
         </div>
     </div>
 

@@ -7,6 +7,7 @@
     <meta name="description" content="GMS Group app control panel">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="GMS, Company, App, Control Panel">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
 
     <title>GMS Admin Area</title>
@@ -88,23 +89,23 @@
     <!--sidebar end-->
 
     <!--main content start-->
-    <section id="main-content">
-        <section class="wrapper">
-            <!--overview start-->
-            @yield('content')
+    <div id="app">
+        <section id="main-content">
+            <section class="wrapper">
+                <!--overview start-->
+                @yield('content')
+            </section>
         </section>
-    </section>
+    </div>
     <!--main content end-->
 </section>
 <!-- container section start -->
 
 <!-- javascripts -->
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/jquery-ui-1.10.4.min.js') }}"></script>
-<script src="{{ asset('js/jquery-1.8.3.min.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
+
 <script type="text/javascript" src="{{ asset('js/jquery-ui-1.9.2.custom.min.js') }}"></script>
 <!-- bootstrap -->
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <!-- nice scroll -->
 <script src="{{ asset('js/jquery.scrollTo.min.js') }}"></script>
 <script src="{{ asset('js/jquery.nicescroll.js') }}" type="text/javascript"></script>
@@ -126,6 +127,7 @@
 
 <!--custome script for all page-->
 <script src="{{ asset('js/scripts.js') }}"></script>
+
 <!-- custom script for this page-->
 <script src="{{ asset('js/sparkline-chart.js') }}"></script>
 <script src="{{ asset('js/easy-pie-chart.js') }}"></script>
@@ -139,7 +141,6 @@
 <script src="{{ asset('js/sparklines.js') }}"></script>
 <script src="{{ asset('js/charts.js') }}"></script>
 <script src="{{ asset('js/jquery.slimscroll.min.js') }}"></script>
-<script src="{{ asset('js/script.js') }}"></script>
 <script>
     //knob
     $(function() {

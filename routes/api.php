@@ -19,7 +19,7 @@ Route::post('/register', 'UserController@store');
 
 Route::group(['prefix' => 'parents'], function (){
         Route::post('/', 'ParentCompany\ParentCompanyController@store')->middleware('auth:api');
-        Route::get('/', 'ParentCompany\ParentCompanyController@index');
+        Route::get('/', 'ParentCompany\ParentCompanyController@index')->middleware('auth:api');
 });
 
 Route::group(['prefix' => 'children'], function (){
