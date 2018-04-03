@@ -51,4 +51,9 @@ class Service extends GMS
     {
         return $this->hasMany(ServiceImage::class, 'service_id');
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

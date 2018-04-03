@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Product;
 
+use App\Category;
 use App\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Transformers\ProductTransformer;
@@ -21,7 +22,7 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $products = Product::all();
-
+        $categories = Category::all();
         if($request->wantsJson()){
             return  fractal()
                     ->collection($products)
@@ -34,7 +35,7 @@ class ProductController extends Controller
                     ->toArray();
         }
 
-        return view('products', compact('products'));
+        return view('products', compact(['products', 'categories']));
     }
 
     /**
@@ -44,7 +45,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('newProduct');
+        $categories = Category::all();
+        return view('newProduct', compact('categories'));
     }
 
     /**
@@ -60,6 +62,7 @@ class ProductController extends Controller
         $product->en_name = $request->en_name;
         $product->ar_description = $request->ar_description;
         $product->en_description = $request->en_description;
+        $product->category_id = $request->category_id;
         $product->save();
         /*
          * Here stands logo upload function
@@ -87,6 +90,7 @@ class ProductController extends Controller
      */
     public function show(Product $product, Request $request)
     {
+
         if($request->wantsJson()){
             return  fractal()
                 ->item($product)
@@ -106,7 +110,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('editProduct', compact('product'));
+        $categories = Category::all();
+        return view('editProduct', compact(['product', 'categories']));
     }
 
     /**
@@ -134,6 +139,7 @@ class ProductController extends Controller
         $product->en_name = $request->en_name;
         $product->ar_description = $request->ar_description;
         $product->en_description = $request->en_description;
+        $product->category_id = $request->category_id;
         $product->save();
         /*
          * Here stands logo upload function

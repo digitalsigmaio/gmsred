@@ -194,6 +194,9 @@ class UserController extends Controller
         return redirect()->back()->withErrors(['message' => 'Username or password is not correct']);
     }
 
-
+    public function tokens()
+    {
+        return view('accessTokens');
+    }
 
 }

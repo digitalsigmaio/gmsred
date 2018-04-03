@@ -51,4 +51,9 @@ class Product extends GMS
     {
         return $this->hasMany(ProductImage::class, 'product_id');
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

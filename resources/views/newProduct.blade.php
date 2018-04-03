@@ -51,6 +51,21 @@
                                 <textarea class="form-control" name="en_description" id="en_description"></textarea>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label for="category" class="control-label col-lg-2">Category</label>
+                            <div class="col-lg-10">
+                                <select name="category_id" id="category" class="form-control" required>
+                                    <option value="" selected disabled style="background-color: grey; color: #fff">Select category</option>
+                                    @if(count($categories))
+                                        @foreach($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->en_name }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+
                         <!-- Logo -->
                         <div class="form-group">
                             <label class="control-label col-lg-2" for="logo">Logo</label>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Service;
 
+use App\Category;
 use App\Service;
 use App\Transformers\ServiceTransformer;
 use Illuminate\Http\Request;
@@ -18,6 +19,7 @@ class ServiceController extends Controller
     public function index(Request $request)
     {
         $services = Service::all();
+        $categories = Category::all();
         if($request->wantsJson()){
             return  fractal()
                     ->collection($services)
@@ -30,7 +32,7 @@ class ServiceController extends Controller
                     ->toArray();
         }
 
-        return view('services', compact('services'));
+        return view('services', compact(['services', 'categories']));
     }
 
     /**
@@ -40,7 +42,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('newService');
+        $categories = Category::all();
+        return view('newService', compact('categories'));
     }
 
     /**
@@ -56,6 +59,7 @@ class ServiceController extends Controller
         $service->en_name = $request->en_name;
         $service->ar_description = $request->ar_description;
         $service->en_description = $request->en_description;
+        $service->category_id = $request->category_id;
         $service->save();
         /*
          * Here stands logo upload function
@@ -100,7 +104,8 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        return view('editService', compact('service'));
+        $categories = Category::all();
+        return view('editService', compact(['service', 'categories']));
     }
 
     /**
@@ -129,6 +134,7 @@ class ServiceController extends Controller
         $service->en_name = $request->en_name;
         $service->ar_description = $request->ar_description;
         $service->en_description = $request->en_description;
+        $service->category_id = $request->category_id;
         $service->save();
         /*
          * Here stands logo upload function

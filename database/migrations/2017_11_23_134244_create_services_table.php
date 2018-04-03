@@ -19,6 +19,7 @@ class CreateServicesTable extends Migration
             $table->string('en_name');
             $table->text('ar_description');
             $table->text('en_description');
+            $table->integer('category_id')->unsigned();
             $table->string('logo');
             $table->integer('parent_company_id')->unsigned()->index();
             $table->timestamps();

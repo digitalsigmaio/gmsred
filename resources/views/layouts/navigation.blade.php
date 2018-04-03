@@ -138,6 +138,15 @@
                 </ul>
             </li>
             @endif
+            @if(Auth::user()->role == 0)
+                <li class="sub-menu">
+                    <a href="{{ route('access-tokens') }}" class="">
+                        <i class="fa fa-gears"></i>
+                        <span>Access Tokens</span>
+
+                    </a>
+                </li>
+            @endif
         </ul>
         <!-- sidebar menu end-->
     </div>

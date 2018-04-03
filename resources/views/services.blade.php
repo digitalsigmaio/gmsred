@@ -24,6 +24,7 @@
                         <th>English Name</th>
                         <th>Arabic Description</th>
                         <th>English Description</th>
+                        <th>Category</th>
                         <th>Gallery</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -38,6 +39,7 @@
                                 <td>{{ $service->en_name }}</td>
                                 <td><div dir="rtl">{{ $service->ar_description }}</div></td>
                                 <td>{{ $service->en_description }}</td>
+                                <td>{{ $service->category->en_name }}</td>
                                 <td><a href="{{ route('serviceImages', compact('service')) }}"><span class="btn btn-success">View</span></a></td>
                                 <td><a href="{{ route('editService', compact('service')) }}"><span class="btn btn-info">Edit</span></a></td>
                                 <td>
