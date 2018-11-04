@@ -107,7 +107,7 @@ class Notification extends Device
      * @param object $response
      * @return string
      * */
-    public static function response_report(array $response)
+    public static function response_report(object $response)
     {
         $success = 0;
         $failure = 0;

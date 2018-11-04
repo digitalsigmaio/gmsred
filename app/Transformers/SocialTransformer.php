@@ -17,7 +17,7 @@ class SocialTransformer extends TransformerAbstract
     {
         return [
             'id'      => $social->id,
-            'name' => $social->name,
+            'name'    => $social->name,
             'url'     => $social->url,
             'logo'    => $social->logo,
         ];

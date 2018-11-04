@@ -16,6 +16,7 @@ class Client extends GMS
         'parent_company_id' => 1
     ];
 
+
     /*
      * Constant value for Arabic tagline
      *

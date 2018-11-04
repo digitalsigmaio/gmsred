@@ -11,6 +11,7 @@ class Child extends GMS
      *
      * @var array
      * */
+
     protected $attributes = [
         'logo' => self::DEFAULT_IMAGE_PATH,
         'parent_company_id' => 1
